@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #quiz-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .options li {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <div class="question" id="question1">
+        <p>What is the capital of France?</p>
+        <ul class="options" id="options1">
+            <li><input type="radio" name="q1" value="Paris"> Paris</li>
+            <li><input type="radio" name="q1" value="Berlin"> Berlin</li>
+            <li><input type="radio" name="q1" value="London"> London</li>
+        </ul>
+    </div>
+
+    <div class="question" id="question2">
+        <p>Which planet is known as the Red Planet?</p>
+        <ul class="options" id="options2">
+            <li><input type="radio" name="q2" value="Mars"> Mars</li>
+            <li><input type="radio" name="q2" value="Venus"> Venus</li>
+            <li><input type="radio" name="q2" value="Jupiter"> Jupiter</li>
+        </ul>
+    </div>
+
+    <div class="question" id="question3">
+        <p>What is the largest mammal in the world?</p>
+        <ul class="options" id="options3">
+            <li><input type="radio" name="q3" value="Elephant"> Elephant</li>
+            <li><input type="radio" name="q3" value="Blue Whale"> Blue Whale</li>
+            <li><input type="radio" name="q3" value="Giraffe"> Giraffe</li>
+        </ul>
+    </div>
+
+    <button onclick="checkAnswers()">Submit Answers</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answer1 = document.querySelector('input[name="q1"]:checked');
+        const answer2 = document.querySelector('input[name="q2"]:checked');
+        const answer3 = document.querySelector('input[name="q3"]:checked');
+        const resultContainer = document.getElementById('result');
+
+        if (answer1 && answer2 && answer3) {
+            const correctAnswers = ["Paris", "Mars", "Blue Whale"];
+            let score = 0;
+
+            if (correctAnswers[0] === answer1.value) score++;
+            if (correctAnswers[1] === answer2.value) score++;
+            if (correctAnswers[2] === answer3.value) score++;
+
+            resultContainer.innerHTML = `Your score: ${score}/3`;
+        } else {
+            resultContainer.innerHTML = 'Please answer all questions.';
+        }
+    }
+</script>
+
+</body>
+</html>
