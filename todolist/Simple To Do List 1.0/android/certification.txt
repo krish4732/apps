@@ -1,0 +1,24 @@
+---------------------------------------------------
+Here are the ownership and the certification details
+of the Simple To Do List 1.0
+---------------------------------------------------
+
+app_name - 						Simple To Do List
+app_alias - 					simpletodolist
+app_author_name - 				My Company
+app_author_organizational - 	My Company
+app_author_organization - 		My Company
+app_author_locality - 			My Company
+app_author_state - 				-
+app_author_country - 			UNKNOWN
+app_password - 					HM1UORAXV39c
+app_versionName - 				versionName "1.0"
+app_versionCode - 				100
+
+---------------------------------------------------
+The certification was created by WebIntoApp.com at
+the Friday 29th of December 2023 09:24:26 AM
+
+https://www.webintoapp.com
+---------------------------------------------------
+
